@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  CoffeeView.swift
 //  Testing
 //
 //  Created by Joshua Tan on 14/5/20.
@@ -8,14 +8,14 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct CoffeeView: View {
     var body: some View {
-        Text("Hello, World!")
+        Text("CoffeeView!")
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct CoffeeView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        CoffeeView()
     }
 }
