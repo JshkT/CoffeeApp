@@ -17,6 +17,7 @@
 		03DA488C246D3521004C5530 /* TestingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA488B246D3521004C5530 /* TestingUITests.swift */; };
 		03DA489A246D67ED004C5530 /* BrewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA4899246D67ED004C5530 /* BrewView.swift */; };
 		03DA489C246D6893004C5530 /* CoffeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA489B246D6893004C5530 /* CoffeeView.swift */; };
+		03E7B75F246E74410091AD47 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03E7B75E246E74410091AD47 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		03DA488D246D3521004C5530 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03DA4899246D67ED004C5530 /* BrewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewView.swift; sourceTree = "<group>"; };
 		03DA489B246D6893004C5530 /* CoffeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeView.swift; sourceTree = "<group>"; };
+		03E7B75E246E74410091AD47 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		03DA485D246D351F004C5530 = {
 			isa = PBXGroup;
 			children = (
+				03E7B75E246E74410091AD47 /* Default-568h@2x.png */,
 				03DA4868246D351F004C5530 /* CoffeeApp */,
 				03DA487F246D3521004C5530 /* CoffeeAppTests */,
 				03DA488A246D3521004C5530 /* CoffeeAppUITests */,
@@ -247,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03DA4876246D3521004C5530 /* LaunchScreen.storyboard in Resources */,
+				03E7B75F246E74410091AD47 /* Default-568h@2x.png in Resources */,
 				03DA4873246D3521004C5530 /* Preview Assets.xcassets in Resources */,
 				03DA4870246D3521004C5530 /* Assets.xcassets in Resources */,
 			);
