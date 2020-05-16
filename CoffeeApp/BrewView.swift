@@ -18,28 +18,40 @@ struct BrewView: View {
     @State private var grinderType = 0
     let grinderTypes = ["Helor 101", "Hario Skerton", "Commandante C40"]
     
+//    let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: nil)
+    
     var body: some View {
         Form {
+            Text("Brew Settings")
+                    .frame(maxWidth: .infinity, alignment: .center)
+                .font(.headline)
+            
             Section {
-                
-                Picker("Brewer", selection: $brewerType) {
+                Text("Brewer")
+                    .font(.headline)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                Picker("Brewer" ,selection: $brewerType) {
                     ForEach(0 ..< brewerTypes.count) {
                         Text("\(self.brewerTypes[$0])")
                     }
-                }
+                }.pickerStyle(SegmentedPickerStyle())
+
                 TextField("Temperature °C", text: $temperature)
                     .keyboardType(.numberPad)
-                
-                Picker("Grinder", selection: $grinderType) {
+            }.multilineTextAlignment(.center)
+            
+            Section {
+                Text("Grinder")
+                    .font(.headline)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                Picker("Grinder",selection: $grinderType) {
                     ForEach(0 ..< grinderTypes.count) {
                         Text("\(self.grinderTypes[$0])")
                     }
                 }
                 TextField("Grind Setting", text: $grind)
                     .keyboardType(.decimalPad)
-                
-                
-            }
+            }.multilineTextAlignment(.center)
         }.opacity(0.4)
             .navigationBarTitle("Brew Settings", displayMode: .inline)
             .background(Color.white.opacity(0.3))
