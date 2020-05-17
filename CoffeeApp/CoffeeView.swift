@@ -34,22 +34,35 @@ struct CoffeeView: View {
     var body: some View {
         VStack(spacing: 50) {
             
-            NavigationLink(destination: Webview(url: "https://commonmancoffeeroasters.com/collections/filter-coffee"), tag: "CMCR", selection: $selection) {EmptyView() }
             
-            Button("CMCR") {
+            
+                Button("CMCR") {
                 self.selection = "CMCR"
                 
-            }.frame(width: 200.0, height: 200.0)
+            }.frame(width: 200.0, height: 100.0)
                 .background(Color.white.opacity(0.3))
                 .accentColor(.white)
                 .font(.largeTitle)
                 
                 .cornerRadius(15.0)
+        
+            
+            
+                
+                Button("CafeBond") {
+                    self.selection = "CafeBond"
+                    
+                }.frame(width: 200.0, height: 100.0)
+                    .background(Color.white.opacity(0.3))
+                    .accentColor(.white)
+                    .font(.largeTitle)
+                    
+                    .cornerRadius(15.0)
+            
+            NavigationLink(destination: Webview(url: "https://commonmancoffeeroasters.com/collections/filter-coffee"), tag: "CMCR", selection: $selection) {EmptyView() }
+            
+            NavigationLink(destination: Webview(url: "https://cafebond.com/single-origin?category=5%7C3%7C13&merchants=&price=&intensity=&tasting_notes=&roast_type=Filter"), tag: "CafeBond", selection: $selection) {EmptyView() }
         }
-            
-            
-            //        Text("CoffeeView!")
-            //        Webview(url: "https://commonmancoffeeroasters.com/collections/filter-coffee")
             
             
             .background(Image("bike").blur(radius: 10.0))
