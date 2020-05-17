@@ -8,6 +8,13 @@
 
 import SwiftUI
 
+//enum brewerTypes {
+//    case V60
+//    case Origami
+//    case Aeropress
+//}
+
+
 struct BrewView: View {
     @State private var temperature = ""
     @State private var grind = ""
@@ -18,13 +25,13 @@ struct BrewView: View {
     @State private var grinderType = 0
     let grinderTypes = ["Helor 101", "Hario Skerton", "Commandante C40"]
     
-//    let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: nil)
+    //    let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: nil)
     
     var body: some View {
         Form {
-            Text("Brew Settings")
-                    .frame(maxWidth: .infinity, alignment: .center)
-                .font(.headline)
+            //            Text("Brew Settings")
+            //                    .frame(maxWidth: .infinity, alignment: .center)
+            //                .font(.headline)
             
             Section {
                 Text("Brewer")
@@ -35,7 +42,7 @@ struct BrewView: View {
                         Text("\(self.brewerTypes[$0])")
                     }
                 }.pickerStyle(SegmentedPickerStyle())
-
+                
                 TextField("Temperature °C", text: $temperature)
                     .keyboardType(.numberPad)
             }.multilineTextAlignment(.center)
@@ -52,18 +59,19 @@ struct BrewView: View {
                 TextField("Grind Setting", text: $grind)
                     .keyboardType(.decimalPad)
             }.multilineTextAlignment(.center)
-        }.opacity(0.4)
-            .navigationBarTitle("Brew Settings", displayMode: .inline)
-            .background(Color.white.opacity(0.3))
-            .accentColor(.white)
-            .cornerRadius(15.0)
-            .padding(20.0)
-            
-            .background(Image("bike").blur(radius: 10.0))
+
+        }
+        .opacity(0.4)
+        .navigationBarTitle("Brew Settings", displayMode: .inline)
+        .background(Color.white.opacity(0.3))
+        .accentColor(.white)
+        .cornerRadius(15.0)
+        .padding(25.0)
+        .background(Image("bike").blur(radius: 10.0))
         
         
     }
-    
+        
     
     
     

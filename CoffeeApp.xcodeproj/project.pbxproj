@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0347E6C2246FF3C900F0DFB4 /* BrewRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0347E6C1246FF3C900F0DFB4 /* BrewRecord.swift */; };
 		03DA486A246D351F004C5530 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA4869246D351F004C5530 /* AppDelegate.swift */; };
 		03DA486C246D351F004C5530 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA486B246D351F004C5530 /* SceneDelegate.swift */; };
 		03DA486E246D351F004C5530 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA486D246D351F004C5530 /* ContentView.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0347E6C1246FF3C900F0DFB4 /* BrewRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewRecord.swift; sourceTree = "<group>"; };
 		03DA4866246D351F004C5530 /* CoffeeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03DA4869246D351F004C5530 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03DA486B246D351F004C5530 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				03DA4899246D67ED004C5530 /* BrewView.swift */,
 				03DA486D246D351F004C5530 /* ContentView.swift */,
 				03DA489B246D6893004C5530 /* CoffeeView.swift */,
+				0347E6C1246FF3C900F0DFB4 /* BrewRecord.swift */,
 			);
 			path = CoffeeApp;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0347E6C2246FF3C900F0DFB4 /* BrewRecord.swift in Sources */,
 				03DA489A246D67ED004C5530 /* BrewView.swift in Sources */,
 				03DA486A246D351F004C5530 /* AppDelegate.swift in Sources */,
 				03DA486C246D351F004C5530 /* SceneDelegate.swift in Sources */,

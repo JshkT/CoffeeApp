@@ -15,15 +15,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack( spacing: 80){
-                //                Image("tako")
-                //                    .renderingMode(.original)
-                //                    .resizable()
-                //                    .frame(width: 300.0, height: 300.0)
-                //                    .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: 9)
-                //                    .cornerRadius(/*@START_MENU_TOKEN@*/17.0/*@END_MENU_TOKEN@*/)
-                
-                
-                
+                                
                 Button("Brew") {
                     self.selection = "Brew"
                     
