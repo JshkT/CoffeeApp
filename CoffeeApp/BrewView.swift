@@ -25,6 +25,13 @@ struct BrewView: View {
     @State private var grinderType = 0
     let grinderTypes = ["Helor 101", "Hario Skerton", "Commandante C40"]
     
+    @State var defaultGrindSetting: [String] = [3, 6].map { "\($0)" }
+    
+    @State var grinderSettings: [(String, [String])] = [
+        ("Rotations", Array(0...6).map { "\($0)" }),
+        ("Clicks", Array(0...11).map { "\($0)" }),
+    ]
+    
     //    let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: nil)
     
     var body: some View {
@@ -56,8 +63,13 @@ struct BrewView: View {
                         Text("\(self.grinderTypes[$0])")
                     }
                 }
-                TextField("Grind Setting", text: $grind)
-                    .keyboardType(.decimalPad)
+                Text("Grind Setting").frame(maxWidth: .infinity, alignment: .center)
+                HStack(alignment: .center, spacing: 70){
+                    Text("Rotations")
+                    Text("Clicks")
+                }.frame(maxWidth: .infinity, alignment: .center)
+                MultiPicker(data: grinderSettings, selection: $defaultGrindSetting).frame(height: 100)
+
             }.multilineTextAlignment(.center)
 
         }
