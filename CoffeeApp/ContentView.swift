@@ -11,6 +11,9 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var selection: String? = nil
+    @Environment(\.managedObjectContext) var managedObjectContext
+//    @FetchRequest(fetchRequest: BrewRecord.getAllBrewRecords()) var brewRecords:FetchedResults<BrewRecord>
+    @State private var newBrewRecord = ""
     
     var body: some View {
         NavigationView {

@@ -29,7 +29,7 @@ struct Webview: UIViewRepresentable {
 }
 
 struct CoffeeView: View {
-    @State private var selection: String? = nil
+    @State private var retailerSelection: String? = nil
     
     var body: some View {
         VStack(spacing: 50) {
@@ -37,7 +37,7 @@ struct CoffeeView: View {
             
             
                 Button("CMCR") {
-                self.selection = "CMCR"
+                self.retailerSelection = "CMCR"
                 
             }.frame(width: 200.0, height: 100.0)
                 .background(Color.white.opacity(0.3))
@@ -50,7 +50,7 @@ struct CoffeeView: View {
             
                 
                 Button("CafeBond") {
-                    self.selection = "CafeBond"
+                    self.retailerSelection = "CafeBond"
                     
                 }.frame(width: 200.0, height: 100.0)
                     .background(Color.white.opacity(0.3))
@@ -59,9 +59,9 @@ struct CoffeeView: View {
                     
                     .cornerRadius(15.0)
             
-            NavigationLink(destination: Webview(url: "https://commonmancoffeeroasters.com/collections/filter-coffee"), tag: "CMCR", selection: $selection) {EmptyView() }
+            NavigationLink(destination: Webview(url: "https://commonmancoffeeroasters.com/collections/filter-coffee"), tag: "CMCR", selection: $retailerSelection) {EmptyView() }
             
-            NavigationLink(destination: Webview(url: "https://cafebond.com/single-origin?category=5%7C3%7C13&merchants=&price=&intensity=&tasting_notes=&roast_type=Filter"), tag: "CafeBond", selection: $selection) {EmptyView() }
+            NavigationLink(destination: Webview(url: "https://cafebond.com/single-origin?category=5%7C3%7C13&merchants=&price=&intensity=&tasting_notes=&roast_type=Filter"), tag: "CafeBond", selection: $retailerSelection) {EmptyView() }
         }
             
             
