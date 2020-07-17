@@ -11,10 +11,10 @@ import Foundation
 import CoreData
 
 public class BrewRecord: NSManagedObject, Identifiable {
-    @NSManaged public var createdAt:Date?
-    @NSManaged public var brewerType:String?
+    @NSManaged public var createdAt:Date
+    @NSManaged public var brewerType:String
     @NSManaged public var temperature:Int16
-    @NSManaged public var grinderType:String?
+    @NSManaged public var grinderType:String
     @NSManaged public var grindRotations:Int16
     @NSManaged public var grindClicks: Int16
     
@@ -25,20 +25,10 @@ extension BrewRecord {
         let request: NSFetchRequest<BrewRecord> = BrewRecord.fetchRequest() as!
             NSFetchRequest<BrewRecord>
         
-        let sortDescriptor = NSSortDescriptor(key: "createdAt", ascending: true)
+        let sortDescriptor = NSSortDescriptor(key: "createdAt", ascending: false)
         
         request.sortDescriptors = [sortDescriptor]
         
         return request
     }
 }
-
-//struct BrewRecord: Codable {
-//    var brewerType: String
-//    var grinderType: String
-//    var grindRotations: Int
-//    var grindClicks: Int
-//    var temperature: Int
-//}
-
-//let record = BrewRecord(brewerType: 0, grinderType: 0, grind: 3.5, temperature: 91)

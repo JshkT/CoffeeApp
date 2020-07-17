@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-
+import Foundation
 
 /*
  For some godforsaken reason, SwiftUI has no built in methods to dismiss a keyboard/keypad when the user is finished with it.
@@ -26,6 +26,7 @@ extension View {
 struct BrewView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     @FetchRequest(fetchRequest: BrewRecord.getAllBrewRecords()) var brewRecords:FetchedResults<BrewRecord>
+//    @FetchRequest(entity: BrewRecord.entity(), sortDescriptors: []) var brewRecords: FetchedResults<BrewRecord>
     @State private var newBrewRecord = ""
     
     @State private var temperature = ""
