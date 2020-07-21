@@ -11,24 +11,32 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var selection: String? = nil
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @FetchRequest(fetchRequest: BrewRecord.getAllBrewRecords()) var brewRecords:FetchedResults<BrewRecord>
+    
+    @State private var newBrewRecord = ""
     
     var body: some View {
         NavigationView {
-            VStack( spacing: 80){
-                //                Image("tako")
-                //                    .renderingMode(.original)
-                //                    .resizable()
-                //                    .frame(width: 300.0, height: 300.0)
-                //                    .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: 9)
-                //                    .cornerRadius(/*@START_MENU_TOKEN@*/17.0/*@END_MENU_TOKEN@*/)
-                
-                
-                
+            VStack( spacing: 60){
+                                
                 Button("Brew") {
                     self.selection = "Brew"
                     
                 }
-                .frame(width: 200.0, height: 200.0)
+                .frame(width: 200.0, height: 100.0)
+                .background(Color.white.opacity(0.3))
+                
+                .cornerRadius(15.0)
+                .navigationBarTitle("Home")
+                .accentColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
+                .font(.largeTitle)
+                
+                Button("History") {
+                    self.selection = "History"
+                    
+                }
+                .frame(width: 200.0, height: 100.0)
                 .background(Color.white.opacity(0.3))
                 
                 .cornerRadius(15.0)
@@ -39,7 +47,7 @@ struct ContentView: View {
                 Button("Coffee") {
                     self.selection = "Coffee"
                 }
-                .frame(width: 200.0, height: 200.0)
+                .frame(width: 200.0, height: 100.0)
                 .background(Color.white.opacity(0.3))
                 .accentColor(.white)
                     .font(.largeTitle)
@@ -48,7 +56,7 @@ struct ContentView: View {
                 
                 
                 NavigationLink(destination: BrewView(), tag: "Brew", selection: $selection) {EmptyView() }
-                
+                NavigationLink(destination: BrewHistoryView(), tag: "History", selection: $selection) {EmptyView() }
                 NavigationLink(destination: CoffeeView(), tag: "Coffee", selection: $selection) {EmptyView() }
                 
                 
@@ -59,26 +67,6 @@ struct ContentView: View {
             
         }
         
-        
-        
-        
-        
-        
-        
-        
-        //            NavigationLink(destination: Text(":O")){
-        //                Image("tako")
-        //                    .renderingMode(.original)
-        //                    .resizable()
-        //            }.navigationBarTitle("Yeet")
-        //
-        //            NavigationLink(destination:
-        //            Text("Oho")){
-        //                Text("OKOK")
-        //            }.navigationBarTitle("Oho?")
-        
-        //            Text("Hello, World!")
-        //                .navigationBarTitle("Navigation", displayMode: .automatic) //Large first then inline subsequently
     }
 }
 
