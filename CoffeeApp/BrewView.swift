@@ -50,10 +50,6 @@ struct BrewView: View {
     
     var body: some View {
         Form {
-            //            Text("Brew Settings")
-            //                    .frame(maxWidth: .infinity, alignment: .center)
-            //                .font(.headline)
-            
             Section {
                 Text("Brewer")
                     .font(.headline)
@@ -94,11 +90,10 @@ struct BrewView: View {
 
             }.multilineTextAlignment(.center)
                 Button("Submit") {
-                    
-                    //                    self.retailerSelection = "CafeBondx"
-                    print("Hello World")
+                    print("New Entry")
                     print(self.grindSetting)
                     print(self.temperature)
+                    
                     let brewRecord = BrewRecord(context: self.managedObjectContext)
                     brewRecord.createdAt = Date()
                     brewRecord.brewerType = self.brewerTypes[self.brewerType]

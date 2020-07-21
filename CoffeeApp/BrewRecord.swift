@@ -17,6 +17,8 @@ public class BrewRecord: NSManagedObject, Identifiable {
     @NSManaged public var grinderType:String
     @NSManaged public var grindRotations:Int16
     @NSManaged public var grindClicks: Int16
+    @NSManaged public var note: String?
+
     
 }
 

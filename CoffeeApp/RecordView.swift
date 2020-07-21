@@ -39,8 +39,8 @@ struct RecordView: View {
                 
                 }.frame(maxWidth: .infinity, alignment: .leading)
                 
-            }
         }
+    }
         
 }
 

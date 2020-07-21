@@ -6,9 +6,10 @@
         <attribute name="grindClicks" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="grinderType" optional="YES" attributeType="String"/>
         <attribute name="grindRotations" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="note" optional="YES" attributeType="String"/>
         <attribute name="temperature" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="BrewRecord" positionX="-45" positionY="0" width="128" height="133"/>
+        <element name="BrewRecord" positionX="-45" positionY="0" width="128" height="148"/>
     </elements>
 </model>
