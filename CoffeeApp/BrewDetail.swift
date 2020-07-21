@@ -10,8 +10,9 @@ import SwiftUI
 
 struct BrewDetail: View {
     @Environment(\.managedObjectContext) var managedObjectContext
-
+    
     var brewRecord: BrewRecord
+    
     @State var note: String = ""
     
     
@@ -63,7 +64,6 @@ struct BrewDetail: View {
             }
             
             Section(header: Text("About").font(.title)) {
-                
                 TextField("\(brewRecord.note ?? "Add a Note")", text: $note, onCommit: {
                     self.brewRecord.note = self.note
                     print(self.brewRecord)
@@ -81,19 +81,19 @@ struct BrewDetail: View {
                     Text("\(brewRecord.createdAt, formatter: Self.timeFormat)")
                 }
             }
-//            Button("Submit") {
-//
-//                self.brewRecord.note = self.note
-//                print(self.brewRecord)
-//
-//                do {
-//                    try self.managedObjectContext.save()
-//                }catch{
-//                    print(error)
-//                }
-//
-//
-//            }.frame(maxWidth: .infinity, alignment: .center)
+            //            Button("Submit") {
+            //
+            //                self.brewRecord.note = self.note
+            //                print(self.brewRecord)
+            //
+            //                do {
+            //                    try self.managedObjectContext.save()
+            //                }catch{
+            //                    print(error)
+            //                }
+            //
+            //
+            //            }.frame(maxWidth: .infinity, alignment: .center)
         }
             
         .padding(.vertical)

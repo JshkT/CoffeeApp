@@ -11,9 +11,6 @@ import Foundation
 
 struct RecordView: View {
     var brewRecord: BrewRecord
-//    var brewerType: String = ""
-//    var createdAt: Date = Date()
-//    var grinderType: String = ""
     
     //Helper to format date in a more readable form.
     static let dateFormat: DateFormatter = {
@@ -22,7 +19,6 @@ struct RecordView: View {
         return formatter
     }()
     
-        
     
     var body: some View {
         NavigationLink(destination: BrewDetail(brewRecord: brewRecord)) {
