@@ -19,41 +19,47 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack( spacing: 60){
-                                
-                Button("Brew") {
+                Spacer()
+                
+                Button(action: {
                     self.selection = "Brew"
-                    
+                }) {
+                    Text("Brew")
+                        //                .frame(width: 200.0, height: 100.0)
+                        .frame(width: UIScreen.main.bounds.width/2,
+                               height: UIScreen.main.bounds.height/8)
+                        .background(Color.white.opacity(0.3))
+                        .cornerRadius(15.0)
+                        .navigationBarTitle("Home")
+                        .accentColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
+                        .font(.largeTitle)
                 }
-                .frame(width: 200.0, height: 100.0)
-                .background(Color.white.opacity(0.3))
                 
-                .cornerRadius(15.0)
-                .navigationBarTitle("Home")
-                .accentColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
-                .font(.largeTitle)
-                
-                Button("History") {
+                Button(action: {
                     self.selection = "History"
+                }) {
+                    Text("History")
+                        .frame(width: UIScreen.main.bounds.width/2,
+                               height: UIScreen.main.bounds.height/8)
+                        .background(Color.white.opacity(0.3))
+                        .cornerRadius(15.0)
+                        .navigationBarTitle("Home")
+                        .accentColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
+                        .font(.largeTitle)
+                }
+                Button(action: {
+                    self.selection = "Coffee"
+                }) {
+                    Text("Coffee")
+                        //                .frame(width: 200.0, height: 100.0)
+                        .frame(width: UIScreen.main.bounds.width/2,
+                               height: UIScreen.main.bounds.height/8)
+                        .background(Color.white.opacity(0.3))
+                        .accentColor(.white)
+                        .font(.largeTitle)
+                        .cornerRadius(15.0)
                     
                 }
-                .frame(width: 200.0, height: 100.0)
-                .background(Color.white.opacity(0.3))
-                
-                .cornerRadius(15.0)
-                .navigationBarTitle("Home")
-                .accentColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
-                .font(.largeTitle)
-                
-                Button("Coffee") {
-                    self.selection = "Coffee"
-                }
-                .frame(width: 200.0, height: 100.0)
-                .background(Color.white.opacity(0.3))
-                .accentColor(.white)
-                    .font(.largeTitle)
-
-                .cornerRadius(15.0)
-                
                 
                 NavigationLink(destination: BrewView(), tag: "Brew", selection: $selection) {EmptyView() }
                 NavigationLink(destination: BrewHistoryView(), tag: "History", selection: $selection) {EmptyView() }
@@ -61,8 +67,8 @@ struct ContentView: View {
                 
                 
             }
-            .padding(.top, 180.0)
-                
+            .frame(height: UIScreen.main.bounds.height-20, alignment: .center)
+            .padding(.vertical)
             .background(Image("bike").blur(radius: 10.0))
             
         }

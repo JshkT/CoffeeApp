@@ -32,40 +32,41 @@ struct CoffeeView: View {
     @State private var retailerSelection: String? = nil
     
     var body: some View {
-        VStack(spacing: 50) {
-            
-            
-            
-                Button("CMCR") {
+        VStack(spacing: UIScreen.main.bounds.height/11) {
+
+            Button(action:{
                 self.retailerSelection = "CMCR"
-                
-            }.frame(width: 200.0, height: 100.0)
+            }) {
+                Text("CMCR")
+//                .frame(width: 200.0, height: 100.0)
+                    .frame(width: UIScreen.main.bounds.width/2,
+                    height: UIScreen.main.bounds.height/8)
                 .background(Color.white.opacity(0.3))
                 .accentColor(.white)
                 .font(.largeTitle)
-                
                 .cornerRadius(15.0)
-        
+            }
+            Button(action:{
+                self.retailerSelection = "CafeBond"
+            }) {
+                Text("CafeBond")
+//                .frame(width: 200.0, height: 100.0)
+                    .frame(width: UIScreen.main.bounds.width/2,
+                    height: UIScreen.main.bounds.height/8)
+                .background(Color.white.opacity(0.3))
+                .accentColor(.white)
+                .font(.largeTitle)
+                .cornerRadius(15.0)
+            }
             
+            NavigationLink(destination: Webview(url: "https://commonmancoffeeroasters.com/collections/filter-coffee"), tag: "CMCR", selection: $retailerSelection) {EmptyView()}
             
-                
-                Button("CafeBond") {
-                    self.retailerSelection = "CafeBond"
-                    
-                }.frame(width: 200.0, height: 100.0)
-                    .background(Color.white.opacity(0.3))
-                    .accentColor(.white)
-                    .font(.largeTitle)
-                    
-                    .cornerRadius(15.0)
-            
-            NavigationLink(destination: Webview(url: "https://commonmancoffeeroasters.com/collections/filter-coffee"), tag: "CMCR", selection: $retailerSelection) {EmptyView() }
-            
-            NavigationLink(destination: Webview(url: "https://cafebond.com/single-origin?category=5%7C3%7C13&merchants=&price=&intensity=&tasting_notes=&roast_type=Filter"), tag: "CafeBond", selection: $retailerSelection) {EmptyView() }
+            NavigationLink(destination: Webview(url: "https://cafebond.com/single-origin?category=5%7C3%7C13&merchants=&price=&intensity=&tasting_notes=&roast_type=Filter"), tag: "CafeBond", selection: $retailerSelection) {EmptyView()}
         }
             
-            
-            .background(Image("bike").blur(radius: 10.0))
+         .frame(height: UIScreen.main.bounds.height-20, alignment: .center)
+            .padding(.vertical)
+        .background(Image("bike").blur(radius: 10.0))
         
         
     }
