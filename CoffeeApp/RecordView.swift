@@ -10,28 +10,38 @@ import SwiftUI
 import Foundation
 
 struct RecordView: View {
-    var brewerType: String = ""
-    var createdAt: Date = Date()
-    var grinderType: String = ""
+    var brewRecord: BrewRecord
+//    var brewerType: String = ""
+//    var createdAt: Date = Date()
+//    var grinderType: String = ""
+    
+    //Helper to format date in a more readable form.
+    static let dateFormat: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        return formatter
+    }()
+    
         
     
     var body: some View {
-        
-        HStack{
+        NavigationLink(destination: BrewDetail(brewRecord: brewRecord)) {
             VStack(alignment: .leading){
-                Text(brewerType)
-                    .font(.headline)
-                Text("\(createdAt)")
+                    HStack{
+                        Text(brewRecord.brewerType)
+                            .font(.headline)
+                        Text(brewRecord.grinderType)
+                            .font(.caption)
+                    }.frame(maxWidth: .infinity, alignment: .leading)
+                    
+                Text("\(brewRecord.createdAt, formatter: Self.dateFormat)")
                     .font(.caption)
-                Text(grinderType)
-                    .font(.caption)
-
+                
+                }.frame(maxWidth: .infinity, alignment: .leading)
+                
             }
-            .frame(maxWidth: .infinity, alignment: .center)
-
         }
         
-    }
 }
 
 func formatDate(date: Date) -> String{
@@ -44,6 +54,6 @@ func formatDate(date: Date) -> String{
 
 struct RecordView_Previews: PreviewProvider {
     static var previews: some View {
-        RecordView(brewerType: "Testing", createdAt: Date(), grinderType: "EK43")
+        RecordView(brewRecord: BrewRecord())
     }
 }

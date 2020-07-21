@@ -14,18 +14,30 @@ struct BrewHistoryView: View {
     @FetchRequest(fetchRequest: BrewRecord.getAllBrewRecords()) var brewRecords:FetchedResults<BrewRecord>
         
     var body: some View {
+        
+        List(self.brewRecords) { brewRecord in
+            
+            RecordView(
+            brewRecord: brewRecord
+            ).onTapGesture {
+                print("tap tap tap")
                 
-        Section(header: Text("Brew History").font(.title)) {
-            ForEach(self.brewRecords) {brewRecord in
-
-                RecordView(
-                    brewerType: brewRecord.brewerType,
-                    createdAt: brewRecord.createdAt,
-                    grinderType: brewRecord.grinderType
-                )
             }
-        }.opacity(0.4)
-        .navigationBarTitle("Brew History", displayMode: .inline)
+            
+        }
+        
+//        Section(header: Text("Brews").font(.title)) {
+//            ForEach(self.brewRecords) {brewRecord in
+//
+//                RecordView(
+//                    brewerType: brewRecord.brewerType,
+//                    createdAt: brewRecord.createdAt,
+//                    grinderType: brewRecord.grinderType
+//                )
+//            }
+//        }
+        .opacity(0.4)
+        .navigationBarTitle("Brew History")
         .background(Color.white.opacity(0.3))
         .accentColor(.white)
         .cornerRadius(15.0)
